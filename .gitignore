@@ -19,6 +19,12 @@ MinSizeRel
 RelWithDebInfo
 *.opensdf
 
+# Codelite
+*.workspace
+*.project
+*.mk
+ImGui.txt
+
 ## OSX artifacts
 .DS_Store
 
