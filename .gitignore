@@ -1,3 +1,30 @@
+# Binaries
+bin
+bin-obj
+
+# Visual Studio clutter
+_ReSharper*
+*.sdf
+*.suo
+*.dir
+*.vcxproj*
+*.sln
+.vs
+CMakeSettings.json
+Win32
+x64
+Debug
+Release
+MinSizeRel
+RelWithDebInfo
+*.opensdf
+
+# Codelite
+*.workspace
+*.project
+*.mk
+ImGui.txt
+
 ## OSX artifacts
 .DS_Store
 
