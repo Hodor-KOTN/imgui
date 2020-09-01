@@ -552,6 +552,16 @@ static void ImGui_ImplGlfw_WindowSizeCallback(GLFWwindow* window, int, int)
     }
 }
 
+static void ImGui_ImplGlfw_SetWindowSize(ImGuiViewport* viewport, ImVec2 size);
+static void ImGui_ImplGlfw_WindowScaleCallback(GLFWwindow* window, float x, float y)
+{
+    if (ImGuiViewport* viewport = ImGui::FindViewportByPlatformHandle(window))
+    {
+        ImGui_ImplGlfw_SetWindowSize(viewport, viewport->Size);
+    }
+}
+
+
 static void ImGui_ImplGlfw_CreateWindow(ImGuiViewport* viewport)
 {
     ImGuiViewportDataGlfw* data = IM_NEW(ImGuiViewportDataGlfw)();
@@ -585,6 +595,7 @@ static void ImGui_ImplGlfw_CreateWindow(ImGuiViewport* viewport)
     glfwSetWindowCloseCallback(data->Window, ImGui_ImplGlfw_WindowCloseCallback);
     glfwSetWindowPosCallback(data->Window, ImGui_ImplGlfw_WindowPosCallback);
     glfwSetWindowSizeCallback(data->Window, ImGui_ImplGlfw_WindowSizeCallback);
+    glfwSetWindowContentScaleCallback(data->Window, ImGui_ImplGlfw_WindowScaleCallback);
     if (g_ClientApi == GlfwClientApi_OpenGL)
     {
         glfwMakeContextCurrent(data->Window);
