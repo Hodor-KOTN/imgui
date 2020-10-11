@@ -481,9 +481,9 @@ void ImGui_ImplGlfw_NewFrame()
         ImGui_ImplGlfw_UpdateMonitors();
 
     // Setup time step
-    double current_time = glfwGetTime();
-    io.DeltaTime = g_Time > 0.0 ? (float)(current_time - g_Time) : (float)(1.0f / 60.0f);
-    g_Time = current_time;
+    //double current_time = glfwGetTime();
+    //io.DeltaTime = g_Time > 0.0 ? (float)(current_time - g_Time) : (float)(1.0f / 60.0f);
+    //g_Time = current_time;
 
     ImGui_ImplGlfw_UpdateMousePosAndButtons();
     ImGui_ImplGlfw_UpdateMouseCursor();
